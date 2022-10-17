@@ -1,0 +1,31 @@
+h5 {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ img{
+    max-width: 100%;
+    height: 250px;
+}
+.card-style p span {
+    font-size: 15px;
+}
+.card-style p strong {
+    font-size: 18px;
+}
+@media (max-width: 575px) {
+    img {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+/*  */
+.prod-det{
+    width: 60%
+}
+@media (max-width: 575px) {
+.prod-det{
+    width: 100%
+}
+}

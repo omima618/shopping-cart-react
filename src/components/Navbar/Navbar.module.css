@@ -1,0 +1,21 @@
+nav {
+    background-image: linear-gradient(to bottom, #93939380 0%, #00000080 100%);
+}
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav a:hover {
+    color: white;
+}
+.links {
+    list-style: none;
+}
+.logo a {
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+}
