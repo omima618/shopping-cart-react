@@ -1,10 +1,14 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import ProductControls from './ProductControls';
 import { BsFillHouseDoorFill } from 'react-icons/bs';
+import { BsFillCartFill, BsFillHeartFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import { shopActions } from '../Store/shop';
+import { useSelector, useDispatch } from 'react-redux';
 import Style from './Shop.module.css';
-const ProductDetails = () => {
+
+const ProductDetails = (props) => {
+    // G E T   D A T A
     const params = useParams();
     const [product, setProduct] = useState(null);
     useEffect(() => {
@@ -17,13 +21,30 @@ const ProductDetails = () => {
                 setProduct(json);
             });
     };
+    // C A R T   H A N D L E R
+    const dispatch = useDispatch();
+    const shoppingCart = [...useSelector((state) => state.shop.cart)];
+    const addToCartHandler = () => {
+        !shoppingCart.some((item) => item.id === product.id) &&
+            shoppingCart.push(product);
+        dispatch(shopActions.addToCart(shoppingCart));
+        console.log(shoppingCart);
+    };
+    // W I S H L I S T   H A N D L E R
+    const shoppingWishlist = [...useSelector((state) => state.shop.wishlist)];
+    const addToWishlistHandler = () => {
+        !shoppingWishlist.some((item) => item.id === product.id) &&
+            shoppingWishlist.push(product);
+        dispatch(shopActions.addToWishlist(shoppingWishlist));
+        console.log(shoppingWishlist);
+    };
+
     return (
         <div className="container py-5">
             <Link to="/">
                 <BsFillHouseDoorFill className=" fs-3 text-success" />
                 <span className="text-success ms-1">Back To Home</span>
             </Link>
-
             {product && (
                 <div className="py-5 d-flex flex-column flex-sm-row align-items-center">
                     <div>
@@ -57,7 +78,18 @@ const ProductDetails = () => {
                                 EGP {product.price}
                             </strong>
                             <span>
-                                <ProductControls />
+                                <span
+                                    className={`${Style['controls']} text-success me-4`}
+                                    onClick={addToCartHandler}
+                                >
+                                    <BsFillCartFill className="fs-4" />
+                                </span>
+                                <span
+                                    className={`${Style['controls']} text-danger`}
+                                    onClick={addToWishlistHandler}
+                                >
+                                    <BsFillHeartFill className="fs-4" />
+                                </span>
                             </span>
                         </div>
                     </div>

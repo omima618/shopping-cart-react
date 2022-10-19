@@ -1,8 +1,6 @@
-import Style from './Shop.module.css';
-import ProductControls from './ProductControls';
+import Card from './Card';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-const Shop = () => {
+const Shop = (props) => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         getProducts();
@@ -21,40 +19,10 @@ const Shop = () => {
                     <div className="row justify-content-evenly">
                         {products.map((product) => {
                             return (
-                                <div
+                                <Card
                                     key={product.id}
-                                    className={`col-lg-3 col-10 col-sm-5 my-3 p-4 mx-md-1 rounded-4 shadow ${Style['card-style']}`}
-                                >
-                                    <Link to={'/productdetails/' + product.id}>
-                                        {' '}
-                                        <img
-                                            src={product.image}
-                                            className="card-img-top mb-3"
-                                            alt={product.title}
-                                        />{' '}
-                                    </Link>
-                                    <div className="card-body">
-                                        <Link
-                                            to={'/productdetails/' + product.id}
-                                        >
-                                            <h5
-                                                title={product.title}
-                                                className="card-title mb-3 text-start text-dark"
-                                            >
-                                                {product.title}
-                                            </h5>
-                                        </Link>
-                                        <p className="card-text d-flex justify-content-between align-items-center">
-                                            <strong>EGP {product.price}</strong>
-                                            <span className="text-muted">
-                                                Rating : {product.rating.rate}
-                                            </span>
-                                        </p>
-                                        <div className="d-flex justify-content-between align-items-center">
-                                            <ProductControls />
-                                        </div>
-                                    </div>
-                                </div>
+                                    product={product}                     
+                                />
                             );
                         })}
                     </div>

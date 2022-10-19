@@ -1,5 +1,5 @@
 nav {
-    background-image: linear-gradient(to bottom, #93939380 0%, #00000080 100%);
+    border-bottom: 1px solid #d5d5d583;
 }
 nav a {
     text-decoration: none;
@@ -9,13 +9,22 @@ nav a {
     transition: 0.3s;
 }
 nav a:hover {
-    color: white;
+    color: #e64848;
 }
 .links {
     list-style: none;
 }
 .logo a {
-    color: black;
+    color: #e64848;
     font-size: 25px;
-    font-weight: bold;
+    font-weight: bolder;
+    font-family: 'Dancing Script', cursive;
+}
+.controls span {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    top: -25%;
+    right: -70%;
 }
