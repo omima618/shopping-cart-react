@@ -1,0 +1,40 @@
+.support-sec p {
+    line-height: 1.8;
+    font-size: 15px;
+}
+.trend .product {
+    width: 24.5%;
+}
+.trend .product img {
+    width: 100%;
+}
+.heading h6 {
+    font-family: 'Dancing Script', cursive;
+    color: #e64848;
+    font-size: 23px;
+    font-weight: bold;
+}
+.heading h2 {
+    font-size: 40px;
+}
+.support-sec {
+    background-color: #d8f0f2;
+}
+.support-sec .text-wrapper,
+.support-sec .img-wrapper {
+    width: 49%;
+}
+@media (max-width: 992px) {
+    .trend .product {
+        width: 49.5%;
+    }
+}
+@media (max-width: 768px) {
+    .trend .product {
+        width: 80%;
+    }
+    .support-sec .text-wrapper,
+    .support-sec .img-wrapper {
+        width: 100%;
+    }
+}

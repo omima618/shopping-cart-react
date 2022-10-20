@@ -17,14 +17,14 @@ function App() {
             <Navbar />
             <AuthAlert />
             <Routes>
-                <Route path="/" element={<Shop />} />
+                <Route path="/shop" element={<Shop />} />
                 <Route
                     path="/productdetails/:id"
                     element={<ProductDetails />}
                 />
                 <Route path="/wishlist" element={<Wishlist />} />
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/home" element={<Home />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/support" element={<Support />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />

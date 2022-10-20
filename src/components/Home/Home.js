@@ -1,12 +1,16 @@
-import { useSelector } from 'react-redux';
-
+import HeroSlider from './HeroSlider';
+import TrendingProduct from './TrendingProduct';
+import SupportSection from './SupportSection';
+import Footer from './Footer';
+import Suggest from './Suggest';
 const Home = () => {
-    const countValue = useSelector((state) => state.counter.count);
     return (
-        <section className="py-5">
-            <div className="conatiner text-center fs-3">
-                Total Support : $ {countValue}
-            </div>
+        <section>
+            <HeroSlider />
+            <TrendingProduct />
+            <SupportSection />
+            <Suggest />
+            <Footer />
         </section>
     );
 };

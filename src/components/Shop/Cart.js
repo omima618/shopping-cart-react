@@ -42,7 +42,7 @@ const Cart = () => {
                         <br />
                         Explore more products 🛒
                         <br />
-                        <Link to="/" className="mt-3 btn btn-outline-info">
+                        <Link to="/shop" className="mt-3 btn btn-outline-info">
                             Explore
                         </Link>
                     </div>

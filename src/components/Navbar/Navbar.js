@@ -35,13 +35,13 @@ const Navbar = () => {
                     className={`${Style['links']} p-0 m-0 d-flex flex-column flex-sm-row align-items-start align-items-sm-center`}
                 >
                     <li className="my-2 my-sm-0 mx-sm-3">
-                        <Link to="/home">Home</Link>
+                        <Link to="/">Home</Link>
                     </li>
                     <li className="my-2 my-sm-0 mx-sm-3">
                         <Link to="/support">Support</Link>
                     </li>
                     <li className="my-2 my-sm-0 mx-sm-3">
-                        <Link to="/">Shop</Link>
+                        <Link to="/shop">Shop</Link>
                     </li>
                     {authStatus && (
                         <>

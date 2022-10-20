@@ -22,7 +22,6 @@ const Login = () => {
         localStorage.setItem('isLoggedin', !authStatus);
         navigate('/');
     };
-    // S E L E C T    O P T I O N S
     return (
         <div className="container py-5">
             <h2 className=" mb-3 mx-auto">Login</h2>
@@ -97,7 +96,7 @@ const Login = () => {
                 >
                     Login
                 </Button>
-                {/* L O G I N */}
+                {/* S I G N U P */}
                 <div className="text-muted text-center mt-3">
                     Don't have account?
                     <Link to="/signup"> Signup</Link>

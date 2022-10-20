@@ -13,7 +13,6 @@ const Card = (props) => {
     const addToCartHandler = () => {
         if (!auth) {
             dispatch(authActions.showAlert(true));
-
             return;
         }
         !shoppingCart.some((item) => item.id === product.id) &&
