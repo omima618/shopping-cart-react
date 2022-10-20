@@ -80,7 +80,7 @@ const Cart = () => {
                                             {item.category}
                                         </p>
                                         <strong className="fs-5 text-secondary">
-                                            EGP {item.totalPrice}
+                                            EGP {item.price}
                                         </strong>
                                     </div>
                                     <div
