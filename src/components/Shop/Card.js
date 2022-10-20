@@ -3,13 +3,19 @@ import { Link } from 'react-router-dom';
 import { shopActions } from '../Store/shop';
 import { useSelector, useDispatch } from 'react-redux';
 import { BsFillCartFill, BsFillHeartFill } from 'react-icons/bs';
-
+import { authActions } from '../Store/auth';
 const Card = (props) => {
     const product = props.product;
     const dispatch = useDispatch();
+    const auth = useSelector((state) => state.auth.isLoggedin);
     // C A R T   H A N D L E R
     const shoppingCart = [...useSelector((state) => state.shop.cart)];
     const addToCartHandler = () => {
+        if (!auth) {
+            dispatch(authActions.showAlert(true));
+
+            return;
+        }
         !shoppingCart.some((item) => item.id === product.id) &&
             shoppingCart.push(product);
         dispatch(shopActions.addToCart(shoppingCart));
@@ -17,9 +23,14 @@ const Card = (props) => {
     // W I S H L I S T   H A N D L E R
     const shoppingWishlist = [...useSelector((state) => state.shop.wishlist)];
     const addToWishlistHandler = () => {
+        if (!auth) {
+            dispatch(authActions.showAlert(true));
+            return;
+        }
         !shoppingWishlist.some((item) => item.id === product.id) &&
             shoppingWishlist.push(product);
         dispatch(shopActions.addToWishlist(shoppingWishlist));
+        console.log(auth);
     };
     return (
         <div
@@ -38,16 +49,16 @@ const Card = (props) => {
                     className={`${Style['card-btns']} position-absolute top-50 start-50 translate-middle`}
                 >
                     <button
-                        className="btn btn-success me-2"
+                        className="btn btn-success me-1 me-md-2"
                         onClick={addToCartHandler}
                     >
-                        <BsFillCartFill className="fs-5" />
+                        <BsFillCartFill className="fs-6" />
                     </button>
                     <button
                         className="btn btn-danger"
                         onClick={addToWishlistHandler}
                     >
-                        <BsFillHeartFill className="fs-5" />
+                        <BsFillHeartFill className="fs-6" />
                     </button>
                 </div>
             </div>

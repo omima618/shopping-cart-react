@@ -1,6 +1,52 @@
 .wrapper {
     height: 80vh;
 }
-.counter-card input{
-cursor: text;
+.counter-card input {
+    cursor: text;
+}
+.error-wrapper.container {
+    height: 85vh;
+}
+.error-wrapper img {
+    width: 40%;
+    height: 40%;
+}
+.error-wrapper h1 {
+    font-size: 60px;
+}
+.error-wrapper h2 {
+    font-size: 40px;
+}
+.error-wrapper p {
+    font-size: 25px;
+}
+@media (max-width: 992px) {
+    .error-wrapper img {
+        width: 50%;
+        height: 50%;
+    }
+    .error-wrapper h1 {
+        font-size: 50px;
+    }
+    .error-wrapper h2 {
+        font-size: 30px;
+    }
+    .error-wrapper p {
+        font-size: 20px;
+    }
+}
+@media (max-width: 786px) {
+    .error-wrapper img {
+        width: 70%;
+        height: 70%;
+    }
+    .error-wrapper h1 {
+        font-size: 40px;
+    }
+    .error-wrapper h2 {
+        font-size: 25px;
+    }
+    .error-wrapper p {
+        font-size: 18px;
+    }
 }

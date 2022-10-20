@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 import { shopActions } from '../Store/shop';
 import { useSelector, useDispatch } from 'react-redux';
 import Style from './Shop.module.css';
+import { authActions } from '../Store/auth';
 
-const ProductDetails = (props) => {
+const ProductDetails = () => {
     // G E T   D A T A
     const params = useParams();
     const [product, setProduct] = useState(null);
@@ -23,16 +24,24 @@ const ProductDetails = (props) => {
     };
     // C A R T   H A N D L E R
     const dispatch = useDispatch();
+    const auth = useSelector((state) => state.auth.isLoggedin);
     const shoppingCart = [...useSelector((state) => state.shop.cart)];
     const addToCartHandler = () => {
+        if (!auth) {
+            dispatch(authActions.showAlert(true));
+            return;
+        }
         !shoppingCart.some((item) => item.id === product.id) &&
             shoppingCart.push(product);
         dispatch(shopActions.addToCart(shoppingCart));
-        console.log(shoppingCart);
     };
     // W I S H L I S T   H A N D L E R
     const shoppingWishlist = [...useSelector((state) => state.shop.wishlist)];
     const addToWishlistHandler = () => {
+        if (!auth) {
+            dispatch(authActions.showAlert(true));
+            return;
+        }
         !shoppingWishlist.some((item) => item.id === product.id) &&
             shoppingWishlist.push(product);
         dispatch(shopActions.addToWishlist(shoppingWishlist));

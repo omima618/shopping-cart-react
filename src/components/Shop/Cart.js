@@ -1,8 +1,9 @@
 import { shopActions } from '../Store/shop';
 import { useSelector, useDispatch } from 'react-redux';
-import { BsFillTrashFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import Style from './Shop.module.css';
+import { BsFillTrashFill } from 'react-icons/bs';
+import React from 'react';
 const Cart = () => {
     const dispatch = useDispatch();
     const shoppingCart = [...useSelector((state) => state.shop.cart)];
@@ -50,8 +51,8 @@ const Cart = () => {
                     shoppingCart.map((item) => {
                         return (
                             <div
-                                id={item.id}
                                 key={item.id}
+                                id={item.id}
                                 className={`${Style['item-wrapper']} ${Style['cart']} cart mx-auto p-4 rounded-4 mb-3 shadow d-flex flex-wrap flex-sm-nowrap justify-content-between align-items-start`}
                             >
                                 <div
@@ -78,8 +79,8 @@ const Cart = () => {
                                         <p className="text-info">
                                             {item.category}
                                         </p>
-                                        <strong className="text-secondary fs-5">
-                                            EGP {item.price}
+                                        <strong className="fs-5 text-secondary">
+                                            EGP {item.totalPrice}
                                         </strong>
                                     </div>
                                     <div
@@ -93,7 +94,7 @@ const Cart = () => {
                         );
                     })}
                 <div className="text-end fw-bold mt-3">
-                    Total price : EGP {totalPrice}
+                    Total price : EGP {totalPrice.toFixed(2)}
                 </div>
             </div>
         </section>
