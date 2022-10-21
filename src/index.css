@@ -29,6 +29,9 @@ a {
     z-index: 10;
     transition: 0.5s;
 }
+.preloader {
+    height: 80vh;
+}
 @media (max-width: 992px) {
     .alert {
         width: 75%;

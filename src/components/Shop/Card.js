@@ -48,22 +48,24 @@ const Card = (props) => {
                     className={`${Style['card-btns']} position-absolute top-50 start-50 translate-middle`}
                 >
                     <button
-                        className="btn btn-success me-1 me-md-2"
+                        title="add to cart"
+                        className="btn btn-light me-1 py-1 px-2"
                         onClick={addToCartHandler}
                     >
-                        <BsFillCartFill className="fs-6" />
+                        <BsFillCartFill className="fs-5" />
                     </button>
                     <button
-                        className="btn btn-danger"
+                        title="add to wishlist"
+                        className="btn btn-light py-1 px-2"
                         onClick={addToWishlistHandler}
                     >
-                        <BsFillHeartFill className="fs-6" />
+                        <BsFillHeartFill className="fs-5" />
                     </button>
                 </div>
             </div>
             <Link to={'/productdetails/' + product.id}>
                 <div className="card-body">
-                    <p className="text-start text-info fs-6">
+                    <p className="text-start text-danger fs-6">
                         {product.category}
                     </p>
                     <h5

@@ -1,5 +1,5 @@
 import Style from './Navbar.module.css';
-import { json, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { BsFillCartFill, BsFillHeartFill } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
 import { authActions } from '../Store/auth';
@@ -20,7 +20,6 @@ const Navbar = () => {
     }, []);
     const checkAuth = () => {
         const isLoggedIn = JSON.parse(localStorage.getItem('isLoggedin'));
-        console.log(isLoggedIn);
         isLoggedIn
             ? dispatch(authActions.authStatus(true))
             : dispatch(authActions.authStatus(false));
@@ -29,7 +28,7 @@ const Navbar = () => {
         <nav className="py-3">
             <div className="container px-5 px-sm-0 d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center">
                 <div className={`${Style['logo']} text-light`}>
-                    <Link to="/">LOGO</Link>
+                    <Link to="/">SHOP</Link>
                 </div>
                 <ul
                     className={`${Style['links']} p-0 m-0 d-flex flex-column flex-sm-row align-items-start align-items-sm-center`}

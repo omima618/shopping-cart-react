@@ -7,6 +7,7 @@ import { shopActions } from '../Store/shop';
 import { useSelector, useDispatch } from 'react-redux';
 import Style from './Shop.module.css';
 import { authActions } from '../Store/auth';
+import preloader from '../../assets/preloader.gif';
 
 const ProductDetails = () => {
     // G E T   D A T A
@@ -50,10 +51,15 @@ const ProductDetails = () => {
 
     return (
         <div className="container py-5">
-            <Link to="/">
-                <BsFillHouseDoorFill className=" fs-3 text-success" />
+            <Link to="/shop">
+                <BsFillHouseDoorFill className=" fs-4 text-success" />
                 <span className="text-success ms-1">Back To Home</span>
             </Link>
+            {!product && (
+                <div className="preloader d-flex justify-content-center align-items-center ">
+                    <img src={preloader} alt="loading" />
+                </div>
+            )}
             {product && (
                 <div className="py-5 d-flex flex-column flex-sm-row align-items-center">
                     <div>

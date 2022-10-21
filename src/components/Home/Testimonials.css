@@ -1,0 +1,55 @@
+.testimonails .swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.testimonails .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.testimonails .swiper-button-next::after,
+.testimonails .swiper-button-prev::after {
+    font-size: 25px !important;
+    color: #e64848;
+}
+.testimonails .img-wrapper {
+    width: 130px;
+    height: 130px;
+}
+.testimonails .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.testimonails .feedback {
+    width: 70%;
+}
+.testimonails .feedback h6 {
+    font-size: 25px;
+    color: #e64848;
+}
+.testimonails .feedback span {
+    font-size: 14px;
+}
+@media (max-width: 768px) {
+    .testimonails .feedback {
+        width: 90%;
+    }
+    .testimonails .img-wrapper {
+        margin-bottom: 20px;
+    }
+}

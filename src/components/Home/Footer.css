@@ -1,0 +1,39 @@
+footer {
+    background-color: #f8f8f8;
+    font-size: 13px;
+}
+footer img {
+    max-width: 100%;
+    height: 100px;
+}
+footer figure {
+    padding: 1px !important;
+}
+footer i {
+    font-size: 20px;
+}
+footer input {
+    width: 80%;
+    color: #838383;
+    padding: 8px 20px;
+}
+input::placeholder {
+    color: #838383;
+    margin-left: 10px;
+}
+input:focus {
+    border: none;
+    outline: none;
+}
+footer button {
+    padding: 8px 20px;
+    color: #fff;
+    background-color: #e64848;
+}
+footer span,
+footer a {
+    color: #e64848;
+}
+footer a:hover {
+    color: white !important;
+}

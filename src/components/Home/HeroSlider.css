@@ -1,88 +1,70 @@
-#app {
-    height: 100%;
-}
-html,
-body {
-    position: relative;
-    height: 100%;
-}
-
-body {
-    background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
-}
-
-.swiper {
+.hero .swiper {
     width: 100%;
     height: 60vh;
 }
 
-.swiper-slide {
+.hero .swiper-slide {
     background-position: center;
     background-size: cover;
 }
 
-.swiper-slide .slide1,
-.swiper-slide .slide2 {
+.hero .swiper-slide .slide1,
+.hero .swiper-slide .slide2 {
     display: block;
     width: 100%;
     height: 100%;
 }
 
-.slide1 {
+.hero .slide1 {
     background-image: url(../../assets/hero-images/hero1.jpg);
     background-size: cover;
 }
-.slide2 {
+.hero .slide2 {
     background-image: url(../../assets/hero-images/hero4.jpg);
     background-size: cover;
 }
-.content h6 {
+.hero .content h6 {
     font-family: 'Dancing Script', cursive;
     color: #e64848;
     font-size: 30px;
 }
-.content p {
+.hero .content p {
     line-height: 1.8;
 }
-.slide1 .content,
-.slide2 .content {
+.hero .slide1 .content,
+.hero .slide2 .content {
     width: 50%;
     padding: 50px;
 }
 @media (max-width: 992px) {
-    .slide2 {
+    .hero .slide2 {
         background-position: right center;
     }
-    .slide1 .content,
-    .slide2 .content {
+    .hero .slide1 .content,
+    .hero .slide2 .content {
         padding: 20px;
     }
 }
 @media (max-width: 768px) {
-    .swiper{
+    .hero .swiper {
         height: 50vh;
     }
-    .slide1,
-    .slide2 {
+    .hero .slide1,
+    .hero .slide2 {
         display: flex !important;
         justify-content: center;
         align-items: center;
     }
-    .slide1 {
+    .hero .slide1 {
         background-image: unset;
         background-color: #fff0ec;
     }
-    .slide2 {
+    .hero .slide2 {
         background-image: unset;
         background-color: #d8f0f2;
     }
-    .slide1 .content,
-    .slide2 .content {
+    .hero .slide1 .content,
+    .hero .slide2 .content {
         width: 80%;
         margin: 0 auto !important;
     }

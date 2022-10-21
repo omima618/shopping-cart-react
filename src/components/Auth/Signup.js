@@ -30,11 +30,11 @@ const Signup = () => {
     const options = [
         {
             value: 1,
-            label: 'Men Wear',
+            label: 'Men Fashion',
         },
         {
             value: 2,
-            label: 'Women Wear',
+            label: 'Women fashion',
         },
         {
             value: 3,
@@ -103,9 +103,9 @@ const Signup = () => {
                         })}
                         aria-invalid={errors.phone ? 'true' : 'false'}
                     />
-                    {errors.username?.type === 'required' && (
+                    {errors.phone?.type === 'required' && (
                         <Form.Text className="text-danger">
-                            username is required.
+                            Phone Number is required.
                         </Form.Text>
                     )}
                     {/*R E M E M B E R    M E */}

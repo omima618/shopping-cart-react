@@ -10,7 +10,7 @@ import Signup from './components/Auth/Signup';
 import Login from './components/Auth/Login';
 import ProductDetails from './components/Shop/ProductDetails';
 import AuthAlert from './components/Auth/AuthAlert';
-import NotFound from './components/Home/NotFound';
+import NotFound from './components/NotFound/NotFound';
 function App() {
     return (
         <BrowserRouter>

@@ -36,7 +36,10 @@ img {
 .item-wrapper {
     width: 60%;
 }
-
+.empty-img{
+width: 100px;
+height:100px;
+}
 .img-wrapper,
 .img-wrapper-shop {
     transition: 0.5s;

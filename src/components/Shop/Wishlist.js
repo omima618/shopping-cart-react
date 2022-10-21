@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { BsFillCartFill, BsFillTrashFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import Style from './Shop.module.css';
+import emptyWishlist from '../../assets/empty-wishlist.png';
+
 const Wishlist = () => {
     const dispatch = useDispatch();
     const shoppingWishlist = [...useSelector((state) => state.shop.wishlist)];
@@ -43,11 +45,18 @@ const Wishlist = () => {
                     <div
                         className={`${Style['item-wrapper']} fs-3 text-center mx-auto rounded-3 shadow p-4`}
                     >
-                        You have not added any items yet !
-                        <br />
-                        Explore more products 🛒
-                        <br />
-                        <Link to="/shop" className="mt-3 btn btn-outline-info">
+                        <p className="fs-4">
+                            You have not added any items yet !
+                        </p>
+                        <img
+                            src={emptyWishlist}
+                            alt="empty cart"
+                            className={`${Style['empty-img']} d-block mx-auto `}
+                        />
+                        <Link
+                            to="/shop"
+                            className="mt-3 btn btn-outline-dark px-4"
+                        >
                             Explore
                         </Link>
                     </div>
@@ -69,7 +78,7 @@ const Wishlist = () => {
                                         alt={item.title}
                                     />
                                     <button
-                                        className=" btn btn-outline-success  position-absolute top-50 start-50 translate-middle"
+                                        className=" btn btn-light py-1 px-2  position-absolute top-50 start-50 translate-middle"
                                         onClick={addToCartHandler}
                                     >
                                         <BsFillCartFill className="fs-5" />
@@ -90,7 +99,7 @@ const Wishlist = () => {
                                         </strong>
                                     </div>
                                     <div
-                                        className="btn btn-outline-danger h-25 border-0 ms-auto"
+                                        className="btn text-danger h-25 border-0 ms-auto"
                                         onClick={removeHandler}
                                     >
                                         <BsFillTrashFill className="fs-5" />

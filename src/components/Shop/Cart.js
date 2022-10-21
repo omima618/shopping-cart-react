@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Style from './Shop.module.css';
 import { BsFillTrashFill } from 'react-icons/bs';
-import React from 'react';
+import emptyCart from '../../assets/empty-shopping-cart.png';
 const Cart = () => {
     const dispatch = useDispatch();
     const shoppingCart = [...useSelector((state) => state.shop.cart)];
@@ -36,13 +36,20 @@ const Cart = () => {
                 </div>
                 {shoppingCart.length === 0 && (
                     <div
-                        className={`${Style['item-wrapper']} fs-3 text-center mx-auto rounded-3 shadow p-4`}
+                        className={`${Style['item-wrapper']} text-center mx-auto rounded-3 shadow p-4`}
                     >
-                        You have not added any items yet !
-                        <br />
-                        Explore more products 🛒
-                        <br />
-                        <Link to="/shop" className="mt-3 btn btn-outline-info">
+                        <p className="fs-4">
+                            You have not added any items yet !
+                        </p>
+                        <img
+                            src={emptyCart}
+                            alt="empty cart"
+                            className={`${Style['empty-img']} d-block mx-auto `}
+                        />
+                        <Link
+                            to="/shop"
+                            className="mt-3 btn btn-outline-dark px-4"
+                        >
                             Explore
                         </Link>
                     </div>
@@ -84,7 +91,7 @@ const Cart = () => {
                                         </strong>
                                     </div>
                                     <div
-                                        className="btn btn-outline-danger h-25 border-0 ms-auto"
+                                        className="btn text-danger h-25 border-0 ms-auto"
                                         onClick={removeHandler}
                                     >
                                         <BsFillTrashFill className="fs-5" />
