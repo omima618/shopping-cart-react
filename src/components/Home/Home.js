@@ -7,6 +7,7 @@ import Banner from './Banner';
 import Categories from './Categories';
 import Blogs from './Blogs';
 import Testimonail from './Testimonail';
+
 const Home = () => {
     return (
         <section>

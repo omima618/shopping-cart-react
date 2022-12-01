@@ -24,7 +24,7 @@ const Signup = () => {
     const submitHandler = (data) => {
         dispatch(authActions.authStatus(true));
         localStorage.setItem('isLoggedin', !authStatus);
-        navigate('/');
+        navigate('/shop');
     };
     // S E L E C T    O P T I O N S
     const options = [

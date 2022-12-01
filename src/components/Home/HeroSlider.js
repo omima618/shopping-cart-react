@@ -1,4 +1,4 @@
-import { EffectFade, Navigation, Autoplay } from 'swiper';
+import { EffectFade, Navigation, Autoplay, Lazy } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
@@ -16,10 +16,11 @@ const HeroSlider = () => {
                 autoplay={{
                     delay: 5000,
                 }}
-                modules={[EffectFade, Navigation, Autoplay]}
+                lazy={true}
+                modules={[EffectFade, Navigation, Autoplay, Lazy]}
                 className="mySwiper"
             >
-                <SwiperSlide>
+                <SwiperSlide >
                     <div className="slide1">
                         <div className="content">
                             <h6>fashion sale</h6>
@@ -36,7 +37,7 @@ const HeroSlider = () => {
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide >
                     <div className="slide2">
                         <div className="content ms-auto">
                             <h6>fashion sale</h6>

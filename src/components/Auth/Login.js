@@ -20,7 +20,7 @@ const Login = () => {
     const submitHandler = (data) => {
         dispatch(authActions.authStatus(true));
         localStorage.setItem('isLoggedin', !authStatus);
-        navigate('/');
+        navigate('/shop');
     };
     return (
         <div className="container py-5">
