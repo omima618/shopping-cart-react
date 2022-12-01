@@ -1,6 +1,6 @@
 {
+    "homepage": "https://omima618.github.io/shopping-cart-react/",
     "name": "products",
-    "homepage": "https://omima618.github.io/shopping-cart-react",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
