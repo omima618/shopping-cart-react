@@ -42,6 +42,14 @@ function App() {
                         </Suspense>
                     }
                 />
+                <Route
+                    path="/shopping-cart-react"
+                    element={
+                        <Suspense fallback={Loader()}>
+                            <HomeComponent />
+                        </Suspense>
+                    }
+                />
                 <Route path="/shop" element={<Shop />} />
                 <Route path="/wishlist" element={<Wishlist />} />
                 <Route path="/cart" element={<Cart />} />
