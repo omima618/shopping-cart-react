@@ -1,6 +1,6 @@
 import Card from './Card';
 import { useState, useEffect } from 'react';
-import preloader from '../../assets/preloader.gif';
+import Spinner from '../Spinner/Spinner';
 const Shop = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
@@ -13,13 +13,10 @@ const Shop = () => {
                 setProducts(json);
             });
     };
+    if (products.length === 0) return <Spinner />;
+
     return (
         <section className="py-5">
-            {products.length === 0 && (
-                <div className="preloader d-flex justify-content-center">
-                    <img src={preloader} alt="loading" />
-                </div>
-            )}
             {products.length > 0 && (
                 <div className="container text-center fs-3">
                     <div className="row justify-content-evenly">

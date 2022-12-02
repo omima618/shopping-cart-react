@@ -11,18 +11,8 @@ import Login from './components/Auth/Login';
 import ProductDetails from './components/Shop/ProductDetails';
 import AuthAlert from './components/Auth/AuthAlert';
 import NotFound from './components/NotFound/NotFound';
+import Spinner from './components/Spinner/Spinner';
 
-import preloader from '../src/assets/preloader.gif';
-
-const Loader = () => {
-    return (
-        <div className="container">
-            <div className="preloader d-flex justify-content-center">
-                <img src={preloader} alt="loading" />
-            </div>
-        </div>
-    );
-};
 const HomeComponent = lazy(() => import('./components/Home/Home'));
 function App() {
     return (
@@ -37,7 +27,7 @@ function App() {
                 <Route
                     path="/"
                     element={
-                        <Suspense fallback={Loader()}>
+                        <Suspense fallback={<Spinner />}>
                             <HomeComponent />
                         </Suspense>
                     }
@@ -45,7 +35,7 @@ function App() {
                 <Route
                     path="/shopping-cart-react"
                     element={
-                        <Suspense fallback={Loader()}>
+                        <Suspense fallback={<Spinner />}>
                             <HomeComponent />
                         </Suspense>
                     }
